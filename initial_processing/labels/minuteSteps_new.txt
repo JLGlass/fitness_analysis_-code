@@ -1,0 +1,21 @@
+dir	file	label
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0001_minuteStepsNarrow_20141226_20200126.csv	01-0001
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0002_minuteStepsNarrow_20141226_20200126.csv	01-0002
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0004_minuteStepsNarrow_20141226_20200126.csv	01-0004
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0005_minuteStepsNarrow_20141226_20200126.csv	01-0005
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0006_minuteStepsNarrow_20141226_20200126.csv	01-0006
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0007- Withdrawn_minuteStepsNarrow_20141226_20200126.csv	01-0007- Withdrawn
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0008- Off Study_minuteStepsNarrow_20141226_20200126.csv	01-0008- Off Study
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0010_minuteStepsNarrow_20141226_20200126.csv	01-0010
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0011_minuteStepsNarrow_20141226_20200126.csv	01-0011
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0012_minuteStepsNarrow_20141226_20200126.csv	01-0012
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0013_minuteStepsNarrow_20141226_20200126.csv	01-0013
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0014_minuteStepsNarrow_20141226_20200126.csv	01-0014
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0015_minuteStepsNarrow_20141226_20200126.csv	01-0015
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0016_minuteStepsNarrow_20141226_20200126.csv	01-0016
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0017_minuteStepsNarrow_20141226_20200126.csv	01-0017
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0018_minuteStepsNarrow_20141226_20200126.csv	01-0018
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0019_minuteStepsNarrow_20141226_20200126.csv	01-0019
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0020_minuteStepsNarrow_20141226_20200126.csv	01-0020
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0022_minuteStepsNarrow_20141226_20200126.csv	01-0022
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0023_minuteStepsNarrow_20141226_20200126.csv	01-0023

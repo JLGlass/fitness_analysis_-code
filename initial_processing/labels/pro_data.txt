@@ -1,0 +1,6 @@
+dir	file	label
+"~/fitness/data/PRO & Other Data"	LCCC_1543_6MWD_2018-06-19_11-19-40.csv	walk.test
+"~/fitness/data/PRO & Other Data"	LCCC_1543_BL_2018-06-19_11-12-47.csv	baseline
+"~/fitness/data/PRO & Other Data"	LCCC_1543_CPET_2018-06-19_11-22-37.csv	cpet
+"~/fitness/data/PRO & Other Data"	LCCC_1543_FU-SAT_2018-06-19_11-23-27.csv	followup.sat
+"~/fitness/data/PRO & Other Data"	LCCC_1543_FU_2018-06-19_11-23-00.csv	followup

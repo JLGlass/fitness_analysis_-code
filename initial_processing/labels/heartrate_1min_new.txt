@@ -1,0 +1,21 @@
+dir	file	label
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0001_heartrate_1min_20141226_20200126.csv	01-0001
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0002_heartrate_1min_20141226_20200126.csv	01-0002
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0004_heartrate_1min_20141226_20200126.csv	01-0004
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0005_heartrate_1min_20141226_20200126.csv	01-0005
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0006_heartrate_1min_20141226_20200126.csv	01-0006
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0007- Withdrawn_heartrate_1min_20141226_20200126.csv	01-0007- Withdrawn
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0008- Off Study_heartrate_1min_20141226_20200126.csv	01-0008- Off Study
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0010_heartrate_1min_20141226_20200126.csv	01-0010
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0011_heartrate_1min_20141226_20200126.csv	01-0011
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0012_heartrate_1min_20141226_20200126.csv	01-0012
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0013_heartrate_1min_20141226_20200126.csv	01-0013
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0014_heartrate_1min_20141226_20200126.csv	01-0014
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0015_heartrate_1min_20141226_20200126.csv	01-0015
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0016_heartrate_1min_20141226_20200126.csv	01-0016
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0017_heartrate_1min_20141226_20200126.csv	01-0017
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0018_heartrate_1min_20141226_20200126.csv	01-0018
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0019_heartrate_1min_20141226_20200126.csv	01-0019
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0020_heartrate_1min_20141226_20200126.csv	01-0020
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0022_heartrate_1min_20141226_20200126.csv	01-0022
+~/fitness/data/new_cohort/Export-1-26-2020_2_41_pm	01-0023_heartrate_1min_20141226_20200126.csv	01-0023

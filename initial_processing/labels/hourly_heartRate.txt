@@ -1,0 +1,44 @@
+file	label	time.format.string
+101_heartrate_seconds_20160331_20160602.csv	101	%m/%d/%Y %I:%M:%S %p
+102_heartrate_seconds_20160407_20160604.csv	102	%m/%d/%Y %I:%M:%S %p
+103_heartrate_seconds_20160413_20160708.csv	103	%m/%d/%Y %I:%M:%S %p
+103_heartrate_seconds_20160709_20160830.csv	103	%m/%d/%Y %I:%M:%S %p
+104_heartrate_seconds_20160420_20160803.csv	104	%m/%d/%Y %I:%M:%S %p
+105_heartrate_seconds_20160503_20160723.csv	105	%m/%d/%Y %I:%M:%S %p
+106_heartrate_seconds_20160530_20160723.csv	106	%m/%d/%Y %I:%M:%S %p
+107_heartrate_seconds_20160608_20160608.csv	107	%m/%d/%Y %I:%M:%S %p
+108_heartrate_seconds_20160622_20160808.csv	108	%m/%d/%Y %I:%M:%S %p
+109_heartrate_seconds_20160614_20160630.csv	109	%m/%d/%Y %I:%M:%S %p
+111_heartrate_seconds_20160701_20160815.csv	111	%m/%d/%Y %I:%M:%S %p
+112_heartrate_seconds_20160722_20160915.csv	112	%m/%d/%Y %I:%M:%S %p
+114_heartrate_seconds_20160730_20160907.csv	114	%m/%d/%Y %I:%M:%S %p
+115_heartrate_seconds_20161028_20161203.csv	115	%m/%d/%Y %I:%M:%S %p
+116_heartrate_seconds_20161111_20170116.csv	116	%m/%d/%Y %I:%M:%S %p
+117_heartrate_seconds_20170131_20170331.csv	117	%m/%d/%Y %I:%M:%S %p
+118_heartrate_seconds_20170724_20170828.csv	118	%m/%d/%Y %I:%M:%S %p
+120_heartrate_seconds_20171220_20180208.csv	120	%m/%d/%Y %I:%M:%S %p
+201_heartrate_seconds_20170113_20170204.csv	201	%m/%d/%Y %I:%M:%S %p
+202_heartrate_seconds_20170217_20170310.csv	202	%m/%d/%Y %I:%M:%S %p
+203_heartrate_seconds_20170314_20170411.csv	203	%m/%d/%Y %I:%M:%S %p
+204_heartrate_seconds_20170402_20170425.csv	204	%m/%d/%Y %I:%M:%S %p
+205_heartrate_seconds_20170613_20171006.csv	205	%m/%d/%Y %I:%M:%S %p
+205_heartrate_seconds_20171007_20171116.csv	205	%m/%d/%Y %I:%M:%S %p
+208_heartrate_seconds_20170923_20171112.csv	208	%m/%d/%Y %I:%M:%S %p
+302_heartrate_seconds_20170214_20170317.csv	302	%m/%d/%Y %I:%M:%S %p
+303_heartrate_seconds_20170124_20170228.csv	303	%m/%d/%Y %I:%M:%S %p
+305_heartrate_seconds_20170217_20170320.csv	305	%m/%d/%Y %I:%M:%S %p
+306_heartrate_seconds_20170309_20170309.csv	306	%m/%d/%Y %I:%M:%S %p
+307_heartrate_seconds_20170320_20170417.csv	307	%m/%d/%Y %I:%M:%S %p
+309_heartrate_seconds_20170407_20170425.csv	309	%m/%d/%Y %H:%M
+311_heartrate_seconds_20170504_20170516.csv	311	%m/%d/%Y %H:%M
+312_heartrate_seconds_20170505_20170520.csv	312	%m/%d/%Y %H:%M
+401_heartrate_seconds_20170222_20170323.csv	401	%m/%d/%Y %H:%M
+402_heartrate_seconds_20170223_20170503.csv	402	%m/%d/%Y %H:%M
+403_heartrate_seconds_20170306_20170404.csv	403	%m/%d/%Y %H:%M
+404_heartrate_seconds_20170324_20170531.csv	404	%m/%d/%Y %H:%M
+406_heartrate_seconds_20170412_20170912.csv	406	%m/%d/%Y %H:%M
+410_heartrate_seconds_20170718_20170824.csv	410	%m/%d/%Y %H:%M
+412_heartrate_seconds_20170816_20171227.csv	412	%m/%d/%Y %H:%M
+412_heartrate_seconds_20171228_20180207.csv	412	%m/%d/%Y %H:%M
+412_heartrate_seconds_20180208_20180323.csv	412	%m/%d/%Y %H:%M
+413_heartrate_seconds_20170906_20180319.csv	413	%m/%d/%Y %H:%M
