@@ -519,109 +519,6 @@ write.table(dt.allData, file.path(dir.root, 'tables/all_data.txt'), row.names=F,
 
 
 
-### Modeling ###
-
-library(caret)
-library(AppliedPredictiveModeling)
-library(Rtsne)
-
-# set up data
-vec.outcomeVars = c('ecog', 'tscore')
-vec.vars = setdiff(colnames(dt.allData), c('id', 'study.week', vec.outcomeVars))
-
-vec.cols.numeric = setdiff(colnames(dt.allData), c('id', 'study.week'))
-
-dt.allData = dt.allData[!is.na(steps.daily),]
-dt.allData[, (vec.cols.numeric):=lapply(.SD, as.numeric), .SDcols=vec.cols.numeric]
-dt.allData[, study.week:=factor(study.week)]
-dt.allData[, id:=factor(id)]
-dt.allData[, sync.count:=ifelse(is.na(sync.count), 0, sync.count)]
-
-# example of manual test / training
-num.split = round(nrow(dt.allData) * 0.8)
-vec.random = sample(1:nrow(dt.allData))
-
-dt.train = dt.allData[vec.random[1:num.split],]
-dt.test = dt.allData[vec.random[(num.split+1):nrow(dt.allData)],]
-
-model.tscore = lm(tscore ~ sleep + METs.max + VeryActiveMinutes + FairlyActiveMinutes + LightlyActiveMinutes + SedentaryMinutes + BedMinutes + hr.median + steps.max + steps.daily + intensity.max + calories.max + calories.daily, dt.train)
-
-p.tscore = predict(model.tscore, dt.test)
-vec.error = p.tscore - dt.test[, tscore]
-
-num.rmse = sqrt(mean(vec.error^2, na.rm=T))
-summary(model.tscore)
-# end example #
-
-# using caret package
-vec.vars.all = c('study.week', 'METs.median', 'METs.sd', 'VeryActiveMinutes', 'FairlyActiveMinutes', 'LightlyActiveMinutes', 'SedentaryMinutes', 'BedMinutes', 'hr.median', 'hr.sd', 'hr.max', 'steps.daily', 'steps.max', 'steps.sd', 'intensity.max', 'intensity.sd', 'calories.daily', 'calories.max', 'calories.sd', 'sync.count')
-formula.ecog.all = as.formula(paste('ecog', paste(vec.vars.all, collapse=' + '), sep='~'))
-formula.tscore.all = as.formula(paste('tscore', paste(vec.vars.all, collapse=' + '), sep='~'))
-
-dt.sub.ecog = dt.allData[!is.na(ecog),]
-dt.sub.tscore = dt.allData[!is.na(tscore),]
-
-obj.trControl = trainControl(method='repeatedcv', number=10, repeats=5, verboseIter=T)
-
-#grid.glm = expand.grid(alpha=0:1, lambda=seq(0.0001, 0.1, length=10))
-
-#model.tscore = train(formula.tscore, dt.sub, method='glmnet', tuneGrid=grid.glm, trControl=obj.trControl, preProcess=c('medianImpute'), na.action=na.pass)
-#coef(model.tscore$finalModel, model.tscore$bestTune$lambda)
-
-model.tscore = train(formula.tscore.all, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog.all, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-# using custom ecog measurements to predict self reported ecog
-formula.ecog.pct = as.formula(ecog ~ ecog.pct)
-formula.ecog.num = as.formula(ecog ~ ecog.num)
-formula.ecog.pct.corrected = as.formula(ecog ~ ecog.pct.corrected)
-formula.ecog.num.corrected = as.formula(ecog ~ ecog.num.corrected)
-
-model.ecog.pct = train(formula.ecog.pct, dt.sub.ecog, method='lm', trControl=obj.trControl, na.action=na.pass)
-model.ecog.pct.corrected = train(formula.ecog.pct.corrected, dt.sub.ecog, method='lm', trControl=obj.trControl, na.action=na.pass)
-model.ecog.num = train(formula.ecog.num, dt.sub.ecog, method='lm', trControl=obj.trControl, na.action=na.pass)
-model.ecog.num.corrected = train(formula.ecog.num.corrected, dt.sub.ecog, method='lm', trControl=obj.trControl, na.action=na.pass)
-
-# model subset
-formula.tscore = as.formula(tscore ~ study.week + steps.daily + hr.median + SedentaryMinutes)
-formula.ecog = as.formula(ecog ~ study.week + steps.daily + hr.median + SedentaryMinutes)
-
-model.tscore = train(formula.tscore, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-# model subset with HR max
-
-formula.tscore = as.formula(tscore ~ study.week + steps.daily + hr.median + hr.max + SedentaryMinutes)
-formula.ecog = as.formula(ecog ~ study.week + steps.daily + hr.median + hr.max + SedentaryMinutes)
-
-model.tscore = train(formula.tscore, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-# model subset with itensity.max
-
-formula.tscore = as.formula(tscore ~ study.week + steps.daily + hr.median + intensity.max + intensity.sd + SedentaryMinutes)
-formula.ecog = as.formula(ecog ~ study.week + steps.daily + hr.median + intensity.max + intensity.sd + SedentaryMinutes)
-
-model.tscore = train(formula.tscore, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-# model subset with METs
-
-formula.tscore = as.formula(tscore ~ study.week + steps.daily + hr.median + METs.median + METs.sd + SedentaryMinutes)
-formula.ecog = as.formula(ecog ~ study.week + steps.daily + hr.median + METs.median + METs.sd + SedentaryMinutes)
-
-model.tscore = train(formula.tscore, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-# model subset with itensity (makes steps.daily not significant)
-
-formula.tscore = as.formula(tscore ~ study.week + steps.daily + hr.median + intensity.max + intensity.sd + SedentaryMinutes)
-formula.ecog = as.formula(ecog ~ study.week + steps.daily + hr.median + intensity.max + intensity.sd + SedentaryMinutes)
-
-model.tscore = train(formula.tscore, dt.sub.tscore, method='glm', trControl=obj.trControl, na.action=na.pass)
-model.ecog = train(formula.ecog, dt.sub.ecog, method='glm', trControl=obj.trControl, na.action=na.pass)
-
-
 ## Plot whole data set
 dt.allData[, id.week:=paste(id, study.week, sep='.')]
 setkey(dt.allData, 'id.week')
@@ -788,21 +685,16 @@ vec.colors.studyPeriod = setNames(brewer.pal(6, 'Set1'), o.studyPeriod)
 
 invisible(lapply(lst.steps.min, function(x) { x[, study.period:=cut(study.day, breaks=c(-50, 4, 11, 18, 25, 32, 1000), labels=o.studyPeriod)]}))
 
-# DD
-# lst.steps.min = lapply(lst.steps.min, function(x) { x[, study.period:=cut(study.day, breaks=c(-50, 4, 11, 18, 25, 32, 1000), labels=o.studyPeriod)]})
+
+### Tracker-based 6MWT generation
+
 vec.count = sapply(lst.steps.min, function(x) {nrow(x[Steps>0,])})
-
-
 lst.p = lapply(names(vec.count[vec.count>0]), function(x) {ggplot(lst.steps.min[[x]][Steps>0,], aes(study.period, Steps, fill=study.period)) + geom_violin(draw_quantiles=c(0.25, 0.5, 0.75)) + scale_fill_manual(values=vec.colors.studyPeriod) + ylim(0,210) + labs(x='Study week', y='Steps / minute', title=x) + theme_minimal()} )
 
-
+# violin plot
 pdf(file.path(dir.plots, 'viol_stepsMin.pdf'))
 print(lst.p)
 dev.off()
-
-
-ggplot(tmp, aes(study.period, Steps, fill=study.period)) + geom_violin() + theme_minimal()
-
 
 
 ## Get all 6 minute intervals
@@ -909,11 +801,3 @@ dev.off()
 png(file.path(dir.plots, 'box_6minDistance_week5+.png'), type='cairo', width=8, height=8, res=150, units='in')
 ggplot(dt.steps.min[study.period=='5+',], aes(patient, dist.6)) + geom_jitter(alpha=0.3, size=0.2) + geom_point(data=dt.walkTest[!is.na(SixMWDTotalMeters),], aes(FolderLabel, SixMWDTotalMeters), color='red', alpha=0.5) + geom_errorbar(data=lst.steps.max[['baseline']], aes(y=NULL, ymin=max.6mw, ymax=max.6mw), color='blue') + labs(x='Patient', y='Distance in 6 minutes (m)', title='Week 5+') + scale_y_continuous(expand=c(0,0)) + p.theme.tufte.xaxis90
 dev.off()
-
-
-
-### Model performance status using exercise testing data
-
-dt.cpet = fread(lbl.pro[label=='cpet', file.path(dir, file)])
-
-vec.cols.cpet = c('CpetDuration', 'CpetVo2Peak', 'CpetMaxHeartRate', 'CpetMvv', 'CpetMvvPercent', 'CpetMinutesExerciesed', 'CpetWorkCapacity', 'WorkCapPercent', 'CpetOxConsump', 'OxConsumpPercent')
